@@ -1,0 +1,14 @@
+D:\хуета крамов\redactor WPF\bin\Debug\redactor WPF.exe.config
+D:\хуета крамов\redactor WPF\bin\Debug\redactor WPF.exe
+D:\хуета крамов\redactor WPF\bin\Debug\redactor WPF.pdb
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF.csproj.AssemblyReference.cache
+D:\хуета крамов\redactor WPF\obj\Debug\MainWindow.baml
+D:\хуета крамов\redactor WPF\obj\Debug\MainWindow.g.cs
+D:\хуета крамов\redactor WPF\obj\Debug\App.g.cs
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF_MarkupCompile.cache
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF.g.resources
+D:\хуета крамов\redactor WPF\obj\Debug\redactor_WPF.Properties.Resources.resources
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF.csproj.GenerateResource.cache
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF.csproj.CoreCompileInputs.cache
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF.exe
+D:\хуета крамов\redactor WPF\obj\Debug\redactor WPF.pdb

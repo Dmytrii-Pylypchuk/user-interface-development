@@ -1,0 +1,10 @@
+D:\хуета крамов\redactor\obj\Debug\redactor.csproj.AssemblyReference.cache
+D:\хуета крамов\redactor\obj\Debug\redactor.Form1.resources
+D:\хуета крамов\redactor\obj\Debug\redactor.Properties.Resources.resources
+D:\хуета крамов\redactor\obj\Debug\redactor.csproj.GenerateResource.cache
+D:\хуета крамов\redactor\obj\Debug\redactor.csproj.CoreCompileInputs.cache
+D:\хуета крамов\redactor\bin\Debug\redactor.exe.config
+D:\хуета крамов\redactor\bin\Debug\redactor.exe
+D:\хуета крамов\redactor\bin\Debug\redactor.pdb
+D:\хуета крамов\redactor\obj\Debug\redactor.exe
+D:\хуета крамов\redactor\obj\Debug\redactor.pdb
