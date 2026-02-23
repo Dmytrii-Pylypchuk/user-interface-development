@@ -15,7 +15,7 @@ namespace redactor
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            // можна залишити порожнім
+           
         }
         private void NewFile_Click(object sender, EventArgs e)
         {
@@ -55,4 +55,5 @@ namespace redactor
             Application.Exit();
         }
     }
+
 }
