@@ -26,16 +26,14 @@ async function askToSaveIfNeeded() {
         buttons: ['Save', 'Don’t Save', 'Cancel'],
         defaultId: 0,
         cancelId: 2,
-        title: 'Unsaved Changes',
         message: 'You have unsaved changes. Save before continuing?'
     });
 
     if (result.response === 0) {
         return await saveFile();
     }
-    if (result.response === 1) {
-        return true;
-    }
+    if (result.response === 1) return true;
+
     return false;
 }
 
@@ -49,18 +47,18 @@ async function saveFile() {
         currentFilePath = filePath;
     }
 
-    const content = await mainWindow.webContents.send('get-content');
+    const content = await mainWindow.webContents.invoke('request-content');
+    fs.writeFileSync(currentFilePath, content);
+
+    isModified = false;
     return true;
 }
 
-ipcMain.handle('save-to-file', (event, content) => {
-    if (currentFilePath) {
-        fs.writeFileSync(currentFilePath, content);
-        isModified = false;
-    }
+ipcMain.handle('request-content', async () => {
+    return await mainWindow.webContents.send('get-content');
 });
 
-ipcMain.on('content-changed', () => {
+ipcMain.on('content-modified', () => {
     isModified = true;
 });
 
@@ -74,8 +72,7 @@ app.whenReady().then(() => {
                 {
                     label: 'New',
                     click: async () => {
-                        const proceed = await askToSaveIfNeeded();
-                        if (!proceed) return;
+                        if (!(await askToSaveIfNeeded())) return;
 
                         currentFilePath = null;
                         mainWindow.webContents.send('clear-editor');
@@ -85,8 +82,7 @@ app.whenReady().then(() => {
                 {
                     label: 'Open',
                     click: async () => {
-                        const proceed = await askToSaveIfNeeded();
-                        if (!proceed) return;
+                        if (!(await askToSaveIfNeeded())) return;
 
                         const { canceled, filePaths } = await dialog.showOpenDialog({
                             properties: ['openFile'],
@@ -111,14 +107,12 @@ app.whenReady().then(() => {
                 {
                     label: 'Exit',
                     click: async () => {
-                        const proceed = await askToSaveIfNeeded();
-                        if (proceed) app.quit();
+                        if (await askToSaveIfNeeded()) app.quit();
                     }
                 }
             ]
         }
     ];
 
-    const menu = Menu.buildFromTemplate(template);
-    Menu.setApplicationMenu(menu);
+    Menu.setApplicationMenu(Menu.buildFromTemplate(template));
 });
