@@ -1,8 +1,9 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
-    loadFile: (callback) => ipcRenderer.on('load-file', (e, data) => callback(data)),
-    clearEditor: (callback) => ipcRenderer.on('clear-editor', callback),
-    notifyChange: () => ipcRenderer.send('content-changed'),
-    saveToFile: (content) => ipcRenderer.invoke('save-to-file', content)
+    sendModified: () => ipcRenderer.send('content-modified'),
+    requestContent: () => ipcRenderer.invoke('request-content'),
+    onLoadFile: (callback) => ipcRenderer.on('load-file', (e, data) => callback(data)),
+    onClear: (callback) => ipcRenderer.on('clear-editor', callback),
+    onGetContent: (callback) => ipcRenderer.on('get-content', callback)
 });
