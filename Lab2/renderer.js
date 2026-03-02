@@ -1,13 +1,17 @@
 const editor = document.getElementById('editor');
 
-window.api.loadFile((content) => {
+editor.addEventListener('input', () => {
+    window.api.sendModified();
+});
+
+window.api.onLoadFile((content) => {
     editor.value = content;
 });
 
-window.api.clearEditor(() => {
+window.api.onClear(() => {
     editor.value = '';
 });
 
-editor.addEventListener('input', () => {
-    window.api.notifyChange();
+window.api.onGetContent(() => {
+    return editor.value;
 });
