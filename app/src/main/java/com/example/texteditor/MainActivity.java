@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         new AlertDialog.Builder(this)
-                .setTitle("Unsaved changes")
+                .setTitle("Unsaved changess")
                 .setMessage("Save changes before continuing?")
                 .setPositiveButton("Save", (dialog, which) -> {
                     saveFile();
