@@ -1,0 +1,37 @@
+# Gradle
+.gradle/
+build/
+*/build/
+.idea/libraries/
+*.iml
+
+# Local configuration
+local.properties
+
+# Android Studio
+.idea/
+.DS_Store
+
+# Log files
+*.log
+
+# APKs
+*.apk
+*.ap_ 
+
+# IntelliJ
+out/
+captures/
+.externalNativeBuild/
+
+# Kotlin
+*.kotlin_module
+
+# JetBrains
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+
+# Misc
+*.orig
