@@ -94,6 +94,18 @@
 - **Storage Access Framework (SAF)**
 - **File Picker (ACTION_OPEN_DOCUMENT / ACTION_CREATE_DOCUMENT)**
 
+## Як запустити проєкт
+1. Відкрити проєкт
+Запустити Android Studio
+Обрати Open
+Вибрати папку проєкту TextEditor
+2. Дочекатися синхронізації Gradle
+Після відкриття проєкту дочекатися завершення Gradle Sync
+3. Запустити застосунок
+Підключити фізичний Android-пристрій або
+Запустити емулятор Android (AVD)
+Натиснути Run ▶
+
 ---
 
 ## Структура проєкту
